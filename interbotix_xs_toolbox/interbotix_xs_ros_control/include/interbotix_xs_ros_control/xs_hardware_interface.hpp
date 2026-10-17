@@ -83,13 +83,6 @@ public:
   /// @brief Write data, publishes to the /commands/ topics
   return_type write(const rclcpp::Time &, const rclcpp::Duration &) override;
 
-  /// @brief Returns the name of this hardware interface
-  /// @return The name of this hardware interface
-  std::string get_name() const final
-  {
-    return info_.name;
-  }
-
   /// @brief ROS Subscriber callback that stores joint_states
   /// @param msg The JointState message from the joint_states topic
   void joint_state_cb(const sensor_msgs::msg::JointState & msg);
